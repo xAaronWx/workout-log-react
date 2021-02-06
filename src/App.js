@@ -3,17 +3,19 @@ import Sitebar from "./home/navbar";
 import Auth from "./auth/Auth";
 
 function App() {
-  const [sessionToken, setSessionToken] = useState(""); //1
+  const [sessionToken, setSessionToken] = useState("");
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken("");
+  };
 
   useEffect(() => {
-    //2
     if (localStorage.getItem("token")) {
       setSessionToken(localStorage.getItem("token"));
     }
   }, []);
 
   const updateToken = (newToken) => {
-    //3
     localStorage.setItem("token", newToken);
     setSessionToken(newToken);
     console.log(sessionToken);
@@ -22,7 +24,7 @@ function App() {
 
   return (
     <div>
-      <Sitebar />
+      <Sitebar clickLogout={clearToken} />
       <Auth updateToken={updateToken} />
     </div>
   );

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
 const Signup = (props) => {
-  const [username, setUsername] = useState(""); //2
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   let handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(username, password);
+    console.log(username, password);
     fetch("http://localhost:3000/user/register", {
       method: "POST",
       body: JSON.stringify({
