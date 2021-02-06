@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
 import WorkoutCreate from "./WorkoutCreate";
+import WorkoutTable from "./WorkoutTable";
 
 const WorkoutIndex = (props) => {
   const [workouts, setWorkouts] = useState([]);
@@ -31,7 +32,11 @@ const WorkoutIndex = (props) => {
           <WorkoutCreate fetchWorkouts={fetchWorkouts} token={props.token} />
         </Col>
         <Col md="9">
-          <h2>Log a workout to see a table. This will be added later</h2>
+          <WorkoutTable
+            workouts={workouts}
+            fetchWorkouts={fetchWorkouts}
+            token={props.token}
+          />
         </Col>
       </Row>
     </Container>
