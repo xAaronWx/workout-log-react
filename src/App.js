@@ -5,6 +5,7 @@ import WorkoutIndex from "./workouts/WorkoutIndex";
 
 function App() {
   const [sessionToken, setSessionToken] = useState("");
+
   const clearToken = () => {
     localStorage.clear();
     setSessionToken("");
@@ -32,7 +33,7 @@ function App() {
 
   return (
     <div>
-      <Sitebar clearToken={clearToken} />
+      <Sitebar clickLogout={clearToken} />
       {protectedViews()}
     </div>
   );
