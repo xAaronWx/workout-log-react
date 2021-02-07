@@ -24,8 +24,10 @@ const WorkoutEdit = (props) => {
         definition: editDef,
         result: editRes,
       }),
-      "Content-Type": "application/json",
-      Authorization: props.token,
+      headers: new Headers({
+        "Content-Type": "application/json",
+        Authorization: props.token,
+      }),
     }).then((res) => {
       props.fetchWorkouts();
       props.updateOff();
@@ -33,7 +35,7 @@ const WorkoutEdit = (props) => {
   };
 
   return (
-    <Modal>
+    <Modal isOpen={true}>
       <ModalHeader>Log a Workout</ModalHeader>
       <ModalBody>
         <Form onSubmit={workoutUpdate}>
