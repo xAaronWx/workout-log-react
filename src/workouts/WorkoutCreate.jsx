@@ -11,11 +11,9 @@ const WorkoutCreate = (props) => {
     fetch("http://localhost:3000/log/", {
       method: "POST",
       body: JSON.stringify({
-        log: {
-          description: description,
-          definition: definition,
-          result: result,
-        },
+        description: description,
+        definition: definition,
+        result: result,
       }),
       headers: new Headers({
         "Content-Type": "application/json",
