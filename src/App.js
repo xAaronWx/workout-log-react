@@ -21,7 +21,6 @@ function App() {
     setSessionToken(newToken);
     console.log(sessionToken);
   };
-  //render method is down here
 
   const protectedViews = () => {
     return sessionToken === localStorage.getItem("token") ? (
@@ -33,7 +32,7 @@ function App() {
 
   return (
     <div>
-      <Sitebar clickLogout={clearToken} />
+      <Sitebar clearToken={clearToken} />
       {protectedViews()}
     </div>
   );

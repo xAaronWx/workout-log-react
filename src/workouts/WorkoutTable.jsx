@@ -30,7 +30,14 @@ const WorkoutTable = (props) => {
             >
               Update
             </Button>
-            <Button color="danger">Delete</Button>
+            <Button
+              color="danger"
+              onClick={() => {
+                deleteWorkout(workout);
+              }}
+            >
+              Delete
+            </Button>
           </td>
         </tr>
       );

@@ -33,7 +33,7 @@ const WorkoutEdit = (props) => {
   };
 
   return (
-    <Modal isOpen={true}>
+    <Modal>
       <ModalHeader>Log a Workout</ModalHeader>
       <ModalBody>
         <Form onSubmit={workoutUpdate}>
